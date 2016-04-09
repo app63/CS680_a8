@@ -53,7 +53,7 @@ void my_dummy(void)
         __asm__ (
         ".globl new_stub    \n\t"
         ".align 4, 0x90     \n\t"
-        "new_stub:      \n\t"
+        "new_stub:          \n\t"
         "pushfl             \n\t"
         "pushal             \n\t"
         "call my_func       \n\t"
