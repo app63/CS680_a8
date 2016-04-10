@@ -54,11 +54,11 @@ void my_dummy(void)
         ".globl new_stub    \n\t"
         ".align 4, 0x90     \n\t"
         "new_stub:          \n\t"
-//        "pushfl             \n\t"
-//        "pushal             \n\t"
+        "pushfl             \n\t"
+        "pushal             \n\t"
         "call my_func       \n\t"
-//        "popal              \n\t"
-//        "popfl              \n\t"
+        "popal              \n\t"
+        "popfl              \n\t"
         "jmp *old_stub      \n\t"
          ::);
 }
