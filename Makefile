@@ -1,4 +1,5 @@
 obj-m += hook.o
+export CFLAGS=-m32
  
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
