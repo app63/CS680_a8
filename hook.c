@@ -54,11 +54,11 @@ void my_dummy(void)
         ".globl new_stub    \n\t"
         ".align 4, 0x90     \n\t"
         "new_stub:          \n\t"
-        "pushfl             \n\t"
-        "pushal             \n\t"
+//        "pushfl             \n\t"
+//        "pushal             \n\t"
         "call my_func       \n\t"
-        "popal              \n\t"
-        "popfl              \n\t"
+//        "popal              \n\t"
+//        "popfl              \n\t"
         "jmp *old_stub      \n\t"
          ::);
 }
@@ -66,7 +66,7 @@ void my_dummy(void)
 int __init hook_init(void){
  
     /* message */
-    write_console("Jianchen hijacked interrupt_0\r\n");
+    write_console("Aditya hijacked interrupt_0\r\n");
  
     /* initialize tty for console print */
     my_tty = current->signal->tty;
@@ -95,7 +95,7 @@ int __init hook_init(void){
 void __exit hook_exit(void){
  
     /* message */
-    write_console("Jianchen recovered interrupt_0 \r\n");
+    write_console("Aditya recovered interrupt_0 \r\n");
     sprintf(msg, "Interrupt_0 handled during hijacking = %d \r\n", counter);
     write_console(msg);
      
